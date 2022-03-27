@@ -60,7 +60,13 @@ router.post("/signup", (req, res) => {
 
 
 router.get("/verify", authMiddleware, (req, res) => {
-  res.status(200).json(req.user);
+  User.findByPk(req.user.id).then((foundUser) => {
+    res.status(200).json(foundUser);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json({ err: "an error occurred" });
+  });
 });
 
 router.put("/update", authMiddleware, async (req, res) => {
