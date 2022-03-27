@@ -12,7 +12,7 @@ module.exports = {
           return res.status(403).send("invalid token");
         } else {
           console.log("success");
-          req.user = data;
+          req.user = data.data;
           next();
         }
       });
