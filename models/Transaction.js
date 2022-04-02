@@ -8,7 +8,7 @@ Transaction.init({
         type: DataTypes.STRING,
     },
     value: {
-        type: DataTypes.DECIMAL
+        type: DataTypes.DECIMAL(10,2)
     },
     date: {
         type: DataTypes.DATE

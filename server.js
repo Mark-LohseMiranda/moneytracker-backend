@@ -19,14 +19,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //LOCAL
-// app.use(cors());
+app.use(cors());
 
 //DEPLOYED
-app.use(
-  cors({
-    origin: ["https://mymoney-tracker-frontend.herokuapp.com"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://mymoney-tracker-frontend.herokuapp.com"],
+//   })
+// );
 
 app.use("/", routes);
 

@@ -23,6 +23,7 @@ module.exports = {
   },
   signToken: function ({ username, id, email }) {
     const payload = { username, id, email };
-    return jwt.sign({ data: payload }, process.env.TOKEN_KEY, {expiresIn: "2h"});
+    // return jwt.sign({ data: payload }, process.env.TOKEN_KEY, {expiresIn: "2h"});
+    return jwt.sign({ data: payload }, process.env.TOKEN_KEY);
   },
 };
